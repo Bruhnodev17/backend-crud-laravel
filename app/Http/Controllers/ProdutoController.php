@@ -55,9 +55,14 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+{
+    $produto = $this->model->find($id);
+    if(!$produto)
     {
-        //
+        return response('Produto não localizado', 404);
     }
+    return response()->json($produto);
+}
 
     /**
      * Show the form for editing the specified resource.

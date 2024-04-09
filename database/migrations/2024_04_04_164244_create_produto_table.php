@@ -19,7 +19,7 @@ class CreateProdutoTable extends Migration
             $table->decimal('price',10)->nullable();
             $table->date('validity')->nullable();
             $table->boolean('perishable')->nullable();
-            $table->decimal('stock',10)->nullable();
+            $table->number('stock',10)->nullable();
             $table->timestamps();
         });
     }
